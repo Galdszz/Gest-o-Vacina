@@ -13,7 +13,8 @@ struct cadastro {
 int main() {
     struct cadastro cliente[999];
     int num = 0;
-    int i;
+    int opcao = 0;
+    int i = 0;
     int n;
     int retorno;
     char cpf2[50];
@@ -27,11 +28,7 @@ int main() {
         scanf("%d", &num);
         switch (num) {
             case 1:
-                system("cls");
-                printf("quantos clientes deseja cadastrar?");
-                scanf("%d", &n);
-
-                for (i = 0; i < n; i++) {
+                do {
                     printf("\t\t\tCADASTRO\n\n\n");
 
                     cliente[i].codigo = i;
@@ -60,8 +57,10 @@ int main() {
                     fflush(stdin);
                     gets(cliente[i].lote);
                     puts("\n");
-                }
-                system("pause");
+
+                    printf("Sadastrar outra pessoa digite 1, se não 2");
+                    scanf("%d", &opcao);
+                } while(opcao == 1);
                 break;
 
             case 2:
